@@ -14,5 +14,9 @@ app.post('/api', (req, res) => {
     const data = req.body;
     console.log(data);
     datbase.insert(data);
-    response.end();
+    res.end;
 });
+
+app.get('/api', (req, res) => {
+    
+})

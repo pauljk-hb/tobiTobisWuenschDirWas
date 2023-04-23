@@ -11,12 +11,14 @@ send.addEventListener('click', () => {
     let songVal = song.value;
     let bandVal = band.value;
     let danceVal = dance.value;
+    let playedVal = false;
 
     const data = {
         nameVal,
         songVal,
         bandVal,
-        danceVal
+        danceVal,
+        playedVal
     };
 
     const options = {
