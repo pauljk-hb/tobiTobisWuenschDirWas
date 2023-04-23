@@ -29,4 +29,8 @@ Das Dabei gesendete Objekt wird in der Konsole geloggt.
 
 ### Endpoints:
 
-Post-Route um zum Server zu schicken: `/api`
+Post-Route um zum Server zu schicken:<br>
+`/api`
+
+get all items from Database <br>
+`/tobi-all`
