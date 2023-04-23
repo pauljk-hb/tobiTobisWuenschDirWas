@@ -17,6 +17,13 @@ app.post('/api', (req, res) => {
     res.end;
 });
 
-app.get('/api', (req, res) => {
-    
+app.get('/tobi-all', (req, res) => {
+    datbase.find({}, (err, data) =>{
+        if (err) {
+            res.json({status: 'falied'});
+            console.log(err);
+            return;
+        }
+        res.json(data);
+    })
 })
