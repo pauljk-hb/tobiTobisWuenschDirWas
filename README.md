@@ -26,6 +26,7 @@ Das Dabei gesendete Objekt wird in der Konsole geloggt.
 
 <br>
 <a href="https://xd.adobe.com/embed/c1abe70d-4859-43b5-8320-49015df51b77-94f8/" target="_blank">Hier zum Design</a>
+Nochmal hinsichtlich der Icons angepasst
 
 ### Endpoints:
 
