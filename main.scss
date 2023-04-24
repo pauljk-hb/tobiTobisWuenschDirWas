@@ -1,13 +1,22 @@
+$white: #ffffff;
 $dark-orange: #d65527;
 $light-orange: #f8af33;
 
 body {
-  background-color: $light-orange;
+  background: url("images/tobi.webp"), linear-gradient(110deg, $white 27%, $dark-orange 27%, $dark-orange 33%, $light-orange 33%) no-repeat;
 }
 
 h1, h2 {
   text-shadow: white 0 0 10px;
   text-align: center;
+}
+
+header {
+  margin-bottom: 15em;
+}
+
+header img {
+  width: 100%;
 }
 
 input, button[type="button"] {
@@ -22,7 +31,7 @@ input, button[type="button"] {
 }
 
 form {
-  margin: 5em;
+  margin: 3em;
 }
 
 button[type="button"] {
