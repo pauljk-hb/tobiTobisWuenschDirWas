@@ -33,5 +33,11 @@ Nochmal hinsichtlich der Icons angepasst
 Post-Route um zum Server zu schicken:<br>
 `/api`
 
-get all items from Database <br>
+Alle Lieder in der Datenbank <br>
 `/tobi-all`
+
+Alle Lieder die sich gewünscht worden und noch nicht gespielt worden (haben den boolschen Wert playedVal)<br>
+`/tobi-wishes`
+
+Alle Lieder die bereits gespielt worden <br>
+`/tobi-played`
