@@ -34,3 +34,25 @@ app.get('/tobi-all', (req, res) => {
         res.json(data);
     })
 })
+
+app.get('/tobi-played', (req, res) =>{
+    datbase.find({ playedVal: true }, (err, data) =>{
+        if(err){
+            res.json({status: 'falied'});
+            console.log(err);
+            return;
+        }
+        res.json(data);
+    })
+})
+
+app.get('/tobi-wishes', (req, res) =>{
+    datbase.find({ playedVal: false }, (err, data) =>{
+        if(err){
+            res.json({status: 'falied'});
+            console.log(err);
+            return;
+        }
+        res.json(data);
+    })
+})
