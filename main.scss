@@ -1,39 +1,98 @@
+@import "roboto";
+
+//Theme config
+
 $white: #ffffff;
 $dark-orange: #d65527;
 $light-orange: #f8af33;
+$dark-grey: #5f5f5f;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Roboto;
+  text-align: center;
+  margin-bottom: .8em;
+  margin-top: .3em;
+}
+
+h1 {
+  font-size: clamp(1.9em, 4vw, 3em);
+  font-weight: 900;
+}
 
 body {
+  font-family: Roboto;
+}
+
+ul li{
+  list-style-position: inside;
+  margin-top: .8em;
+}
+
+//Main App
+#app {
   background: url("images/tobi.webp"), linear-gradient(110deg, $white 27%, $dark-orange 27%, $dark-orange 33%, $light-orange 33%) no-repeat;
+
+
+  header {
+    margin-bottom: 15em;
+  }
+
+  header img {
+    width: 100%;
+  }
+
+  input,
+  button[type="button"] {
+    border-color: $dark-orange;
+    border-radius: 100em;
+    border-width: 4px;
+    border-style: solid;
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    box-sizing: border-box;
+  }
+
+  form {
+    margin: 3em;
+  }
+
+  button[type="button"] {
+    background-color: $dark-orange;
+  }
+
 }
 
-h1, h2 {
-  text-shadow: white 0 0 10px;
-  text-align: center;
-}
+//Tobi Dashboard
 
-header {
-  margin-bottom: 15em;
-}
+//Impressum
+#impressum {
+  background-color: #f8af33;
+  padding: 1em;
+  background: linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
 
-header img {
-  width: 100%;
-}
+  p,
+  ul {
+    padding-left: 5vw;
+    padding-right: 4vw;
+    text-align: inherit;
+  }
 
-input, button[type="button"] {
-  border-color: $dark-orange;
-  border-radius: 100em;
-  border-width: 4px;
-  border-style: solid;
-  width: 100%;
-  padding: 15px;
-  margin: 15px 0;
-  box-sizing: border-box;
-}
+  h1:nth-of-type(2) {
+    margin-top: 3em;
+  }
 
-form {
-  margin: 3em;
-}
+  h2,
+  h3 {
+    margin-top: 1em;
+  }
 
-button[type="button"] {
-  background-color: $dark-orange;
+
 }
