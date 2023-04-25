@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div id="tobi-view">
+
+        <img src="images/Logo.webp" alt="">
+
+        <table id="content"></table>
+
+    </div>
+
+    <script>
+        async function tobiGetData() {
+            const data = await fetch('/tobi-wishes');
+            const jsonData = await data.json();
+            const content = document.getElementById('content');
+
+            for (item of jsonData) {
+                let container = document.createElement('tr');
+                let song = document.createElement('td');
+                let artist = document.createElement('td');
+                let dance = document.createElement('td');
+                let name = document.createElement('td');
+                
+                song.innerText = item.songVal
+                artist.innerText = item.bandVal
+                dance.innerText = item.danceVal
+                name.innerText = item.nameVal
+
+                container.classList.add("container");
+
+                content.appendChild(container);
+                container.appendChild(song);
+                container.appendChild(artist);
+                container.appendChild(dance);
+                container.appendChild(name);            
+            };
+        }
+
+        tobiGetData();
+    </script>
 </body>
+
 </html>
