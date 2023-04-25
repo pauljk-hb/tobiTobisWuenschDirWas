@@ -24,6 +24,8 @@
             const jsonData = await data.json();
             const content = document.getElementById('content');
 
+            content.replaceChildren();
+
             for (item of jsonData) {
                 let container = document.createElement('tr');
                 let song = document.createElement('td');
@@ -47,6 +49,8 @@
         }
 
         tobiGetData();
+
+        setInterval(tobiGetData, 3000)
     </script>
 </body>
 
