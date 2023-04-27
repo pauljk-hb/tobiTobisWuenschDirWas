@@ -21,7 +21,9 @@ app.post('/api', (req, res) => {
     const data = req.body;
     console.log(data);
 
-    datbase.insert(data);
+    if (data.songVal && data.bandVal) {
+        datbase.insert(data);
+    }
     res.end;
 });
 
