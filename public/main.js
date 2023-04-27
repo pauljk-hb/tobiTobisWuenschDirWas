@@ -32,3 +32,18 @@ send.addEventListener('click', () => {
     fetch('/api', options);
 })
 
+async function getData() {
+    const data = await fetch('/tobi-played');
+    const jsonData = await data.json();
+
+    console.log(jsonData);
+}
+getData();
+
+async function getData2() {
+    const data = await fetch('/tobi-wishes');
+    const jsonData = await data.json();
+
+    console.log(jsonData);
+}
+getData2();

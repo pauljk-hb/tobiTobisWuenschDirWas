@@ -20,7 +20,35 @@ datbase.loadDatabase();
 app.post('/api', (req, res) => {
     const data = req.body;
     console.log(data);
+
     datbase.insert(data);
+    res.end;
+});
+
+app.post('/tobi-change', (req, res) => {
+    const data = req.body;
+    const id = data._id
+    console.log(id);
+
+    datbase.update( { _id: id }, {$set: { playedVal: true }}, (err, numReplec) => {
+        if(err){
+            return
+        }
+        numReplec = 1;
+    })
+    res.end;
+});
+
+app.post('/tobi-remove', (req, res) => {
+    const data = req.body;
+    const id = data._id
+    console.log(id);
+
+    datbase.remove( { _id: id }, {}, (err) => {
+        if(err){
+            return
+        }
+    })
     res.end;
 });
 
@@ -56,3 +84,5 @@ app.get('/tobi-wishes', (req, res) =>{
         res.json(data);
     })
 })
+
+// datbase.find({ _id: "1iYGiPgaO9MgpIRF" }, (err, data) =>{ console.log(data)})

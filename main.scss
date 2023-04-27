@@ -17,8 +17,7 @@ body {
 }
 
 img,
-picture
-svg {
+picture svg {
   max-width: 100%;
   display: block;
 }
@@ -37,12 +36,12 @@ h1 {
   font-weight: 900;
 }
 
-ul li{
+ul li {
   list-style-position: inside;
   margin-top: .8em;
 }
 
-a{
+a {
   color: $white;
 }
 
@@ -79,7 +78,7 @@ a{
     background-color: $dark-orange;
   }
 
-  .impressum{
+  .impressum {
     text-align: center;
     margin-bottom: 2em;
   }
@@ -87,33 +86,46 @@ a{
 }
 
 //Tobi Dashboard
-#tobi-view{
+#tobi-view {
   background-color: #f8af33;
   background: linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  img{
+  #Logo {
     width: 30vw;
     margin-top: 2em;
     margin-bottom: 4em;
   }
 
-  #content{
+  #content {
     width: 80vw;
-    border-collapse: collapse;
     margin-bottom: 5em;
-  }
-
-  .container{
-    color: $white;
-  }
-
-  td{
-    border-bottom: 1px solid white;
     border-top: 1px solid white;
-    line-height: 4em;
+
+    &>div {
+      color: $white;
+      grid-template-columns: 3fr 3fr 3fr 2fr 1fr 1fr;
+      display: grid;
+      border-bottom: 1px solid white;
+      align-items: center;
+      padding: 1em 0;
+      gap: .2em;
+
+      &>div {
+        width: 4vw;
+        height: 4vw;
+        background-color: $white;
+        border-radius: .3rem;
+        padding: .5em;
+        justify-self: end;
+
+        &:active{
+          transform: scale(.9);
+        }
+      }
+    }
   }
 }
 
@@ -141,12 +153,12 @@ a{
     margin-top: 1em;
   }
 
-  .back{
+  .back {
     width: 9vw;
     height: auto;
   }
 
-  .circle{
+  .circle {
     background-color: $dark-orange;
     border-radius: 100%;
     position: fixed;
