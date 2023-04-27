@@ -47,3 +47,17 @@ async function getData2() {
     console.log(jsonData);
 }
 getData2();
+
+var btn1 = document.getElementById('bt1');
+var btn2 = document.getElementById('bt2');
+
+btn1.addEventListener('click', () =>{
+    btn1.style.backgroundColor = '#d65527';
+    btn2.style.backgroundColor = '#f8af33';
+    console.log(btn1)
+})
+btn2.addEventListener('click', () =>{
+    btn1.style.backgroundColor = '#f8af33';
+    btn2.style.backgroundColor = '#d65527';
+    console.log(btn2)
+})
