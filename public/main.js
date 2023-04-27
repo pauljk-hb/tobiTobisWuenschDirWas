@@ -32,32 +32,62 @@ send.addEventListener('click', () => {
     fetch('/api', options);
 })
 
-async function getData() {
-    const data = await fetch('/tobi-played');
-    const jsonData = await data.json();
+window.addEventListener('DOMContentLoaded', async () => {
+    const dataPlay = await fetch('/tobi-played');
+    const jsonDataPlay = await dataPlay.json();
+    const dataWish = await fetch('/tobi-wishes');
+    const jsonDataWish = await dataWish.json();
 
-    console.log(jsonData);
-}
-getData();
+    let wish = document.getElementById('wishes')
+    let play = document.getElementById('play')
+    
+    for (let i = 0; i < jsonDataWish.length; i++) {
+        let container = document.createElement('div');
+        let title = document.createElement('p');
+        let img = document.createElement('img');
+        let artist = document.createElement('p');
+        
+        title.textContent = jsonDataWish[i].songVal;
+        img.src = 'images/dancer.webp';
+        artist.textContent = jsonDataWish[i].bandVal;
+        
+        wish.appendChild(container);
+        container.appendChild(title);
+        container.appendChild(img);
+        container.appendChild(artist);
+    }
 
-async function getData2() {
-    const data = await fetch('/tobi-wishes');
-    const jsonData = await data.json();
-
-    console.log(jsonData);
-}
-getData2();
+    for (let i = 0; i < jsonDataPlay.length; i++) {
+        let container = document.createElement('div');
+        let title = document.createElement('p');
+        let img = document.createElement('img');
+        let artist = document.createElement('p');
+        
+        title.textContent = jsonDataPlay[i].songVal;
+        img.src = 'images/dancer.webp';
+        artist.textContent = jsonDataPlay[i].bandVal;
+        
+        play.appendChild(container);
+        container.appendChild(title);
+        container.appendChild(img);
+        container.appendChild(artist);
+    }
+})
 
 var btn1 = document.getElementById('bt1');
 var btn2 = document.getElementById('bt2');
+var play = document.getElementById('play');
+var wishes = document.getElementById('wishes');
 
-btn1.addEventListener('click', () =>{
+btn1.addEventListener('click', () => {
     btn1.style.backgroundColor = '#d65527';
     btn2.style.backgroundColor = '#f8af33';
-    console.log(btn1)
+    play.style.display = 'none';
+    wishes.style.display = 'block';
 })
-btn2.addEventListener('click', () =>{
+btn2.addEventListener('click', () => {
     btn1.style.backgroundColor = '#f8af33';
     btn2.style.backgroundColor = '#d65527';
-    console.log(btn2)
+    play.style.display = 'block';
+    wishes.style.display = 'none';
 })
