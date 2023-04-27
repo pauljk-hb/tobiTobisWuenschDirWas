@@ -1,4 +1,4 @@
-const send = document.querySelector('button');
+const send = document.querySelector('#send');
 
 send.addEventListener('click', () => {
 
