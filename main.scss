@@ -109,9 +109,10 @@ a {
   }
 
   .toggle {
-    height: 7em;
+    height: 3em;
     display: flex;
-    padding: 2em;
+    padding: 0 2em;
+    margin-bottom: 3em;
 
     button[type="button"] {
       background-color: $dark-orange;
@@ -149,10 +150,8 @@ a {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       color: $white;
       font-size: 1em;
-      font-weight: 700;
       margin-bottom: 1em;
 
       img{
