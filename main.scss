@@ -48,6 +48,7 @@ a {
 //Main App
 #app {
   background: url("images/tobi.webp"), linear-gradient(110deg, $white 27%, $dark-orange 27%, $dark-orange 33%, $light-orange 33%) no-repeat;
+  min-height: 100vh;
 
 
   header {
