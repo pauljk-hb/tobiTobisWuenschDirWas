@@ -88,8 +88,7 @@ a {
 
 //Tobi Dashboard
 #tobi-view {
-  background-color: #f8af33;
-  background: linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
+  background: $light-orange linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,10 +131,8 @@ a {
 
 //Impressum
 #impressum {
-  background-color: #f8af33;
-  padding: 1em;
-  padding-top: 3em;
-  background: linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
+  padding: 3em 1em 1em;
+  background: $light-orange linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
   color: $white;
 
   p,
