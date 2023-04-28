@@ -3,7 +3,7 @@ const datastore = require('nedb');
 const sassMiddleware = require('node-sass-middleware')
 
 const app = express();
-app.listen(3000, () => console.log('Turbo Tobi läuft auf Port 3000'))
+app.listen(process.env.PORT || 3000, () => console.log('Turbo Tobi läuft auf Port 3000'))
 app.use(express.static('public'));
 app.use(express.json({limit: '1mb'}))
 app.use(sassMiddleware({
