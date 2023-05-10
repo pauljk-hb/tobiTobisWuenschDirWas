@@ -192,10 +192,6 @@ a {
   color: #CCCCCC !important;
 }
 
-.ag-header-cell-menu-button:not(.ag-header-menu-always-show){
-  opacity: 1 !important;
-}
-
 #tobi-view {
   background: $light-orange linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
   display: flex;
@@ -211,7 +207,7 @@ a {
   }
 
   .back {
-    width: 3vw;
+    width: 2.4vw;
     height: auto;
   }
 
@@ -221,7 +217,18 @@ a {
     position: fixed;
     top: 1.5em;
     right: 3vw;
-    padding: 1.6em;
+    padding: 1em;
+    z-index: 3;
+  }
+
+  .cellDiv{
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .play{
+      height: 90%;
+    }
   }
 
   // #content {
