@@ -173,6 +173,29 @@ a {
 }
 
 //Tobi Dashboard
+.ag-theme-alpine {
+  --ag-alpine-active-color: #d65527!important;
+  --ag-background-color: #f8af33!important;
+  --ag-odd-row-background-color: #e0842e!important;
+  --ag-row-hover-color: #ffc46b !important;
+  --ag-foreground-color: white !important;
+  --ag-header-foreground-color: #d65527 !important;
+  --ag-font-size: 14px !important;
+  --ag-font-family: Roboto !important;
+  --ag-borders: none !important;
+  --ag-row-border-style: solid !important;
+  --ag-row-border-width: 1.3px !important;
+  --ag-row-border-color: white !important;
+}
+
+.ag-header-icon{
+  color: #CCCCCC !important;
+}
+
+.ag-header-cell-menu-button:not(.ag-header-menu-always-show){
+  opacity: 1 !important;
+}
+
 #tobi-view {
   background: $light-orange linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
   display: flex;
@@ -201,34 +224,34 @@ a {
     padding: 1.6em;
   }
 
-  #content {
-    width: 80vw;
-    margin-bottom: 5em;
-    border-top: 1px solid white;
+  // #content {
+  //   width: 80vw;
+  //   margin-bottom: 5em;
+  //   border-top: 1px solid white;
 
-    &>div {
-      color: $white;
-      grid-template-columns: 3fr 3fr 3fr 2fr 1fr 1fr;
-      display: grid;
-      border-bottom: 1px solid white;
-      align-items: center;
-      padding: 1em 0;
-      gap: .2em;
+  //   &>div {
+  //     color: $white;
+  //     grid-template-columns: 3fr 3fr 3fr 2fr 1fr 1fr;
+  //     display: grid;
+  //     border-bottom: 1px solid white;
+  //     align-items: center;
+  //     padding: 1em 0;
+  //     gap: .2em;
 
-      &>div {
-        width: 4vw;
-        height: 4vw;
-        background-color: $white;
-        border-radius: .3rem;
-        padding: .5em;
-        justify-self: end;
+  //     &>div {
+  //       width: 4vw;
+  //       height: 4vw;
+  //       background-color: $white;
+  //       border-radius: .3rem;
+  //       padding: .5em;
+  //       justify-self: end;
 
-        &:active {
-          transform: scale(.9);
-        }
-      }
-    }
-  }
+  //       &:active {
+  //         transform: scale(.9);
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 //Impressum

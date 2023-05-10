@@ -10,7 +10,7 @@ app.use(sassMiddleware({
     src: __dirname,
     dest: __dirname + '/public',
     debug: true,
-    outputStyle: 'compressed'
+    outputStyle: 'extended'
 }));
 
 const datbase = new datastore('database.db');
