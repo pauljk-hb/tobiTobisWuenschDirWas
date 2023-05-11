@@ -21,15 +21,17 @@ send.addEventListener('click', () => {
         playedVal
     };
 
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    };
+    if ((songVal != '') && (bandVal != '') && (danceVal !='')) {
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
 
-    fetch('/api', options);
+        fetch('/api', options);
+    }
 })
 
 window.addEventListener('DOMContentLoaded', async () => {
@@ -40,17 +42,17 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     let wish = document.getElementById('wishes')
     let play = document.getElementById('play')
-    
+
     for (let i = 0; i < jsonDataWish.length; i++) {
         let container = document.createElement('div');
         let title = document.createElement('p');
         let img = document.createElement('img');
         let artist = document.createElement('p');
-        
+
         title.textContent = jsonDataWish[i].songVal;
         img.src = 'images/dancer.webp';
         artist.textContent = jsonDataWish[i].bandVal;
-        
+
         wish.appendChild(container);
         container.appendChild(title);
         container.appendChild(img);
@@ -62,11 +64,11 @@ window.addEventListener('DOMContentLoaded', async () => {
         let title = document.createElement('p');
         let img = document.createElement('img');
         let artist = document.createElement('p');
-        
+
         title.textContent = jsonDataPlay[i].songVal;
         img.src = 'images/dancer.webp';
         artist.textContent = jsonDataPlay[i].bandVal;
-        
+
         play.appendChild(container);
         container.appendChild(title);
         container.appendChild(img);
@@ -78,6 +80,7 @@ var btn1 = document.getElementById('bt1');
 var btn2 = document.getElementById('bt2');
 var play = document.getElementById('play');
 var wishes = document.getElementById('wishes');
+var dance = document.getElementById('dance');
 
 btn1.addEventListener('click', () => {
     btn1.style.backgroundColor = '#d65527';
@@ -91,3 +94,16 @@ btn2.addEventListener('click', () => {
     play.style.display = 'block';
     wishes.style.display = 'none';
 })
+
+dance.addEventListener('change', selectOption, false);
+
+function selectOption() {
+    const selectedOption = this.options[this.selectedIndex].value;
+    console.log(selectedOption);
+    if (selectedOption == '') {
+        this.style.color = '#CCCCCC'
+        console.log(this.options[this.selectedIndex])
+    } else {
+        this.style.color = 'black'
+    }
+}

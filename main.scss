@@ -6,6 +6,7 @@ $white: #ffffff;
 $dark-orange: #d65527;
 $light-orange: #f8af33;
 $light-grey: #CCCCCC;
+$black: black;
 
 * {
   margin: 0;
@@ -47,6 +48,13 @@ a {
   color: $white;
 }
 
+.blackColor{
+  color: $black;
+}
+.greyColor{
+  color: $light-grey;
+}
+
 //Main App
 #app {
   background: linear-gradient(110deg, #fff 10em, #d65527 10em, #d65527 12em, #f8af33 12em) no-repeat;
@@ -82,7 +90,7 @@ a {
   }
 
   input,
-  input[type="submit"] {
+  input[type="submit"], select {
     border-color: $dark-orange;
     border-radius: 100em;
     border-width: 4px;
@@ -96,6 +104,11 @@ a {
     &::placeholder {
       color: $light-grey;
     }
+    
+  }
+
+  select{
+    color: $light-grey;
   }
 
   form {
@@ -199,11 +212,12 @@ a {
   align-items: center;
   min-height: 100vh;
   background-attachment: fixed;
+  overflow: hidden;
 
   #Logo {
-    width: 30vw;
-    margin-top: 2em;
-    margin-bottom: 4em;
+    width: 23vw;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
   }
 
   .back {
@@ -219,6 +233,46 @@ a {
     right: 3vw;
     padding: 1em;
     z-index: 3;
+  }
+
+  #controll-Holder{
+    align-self: flex-start;
+    display: flex;
+    padding-left: 5vw;
+  }
+
+  input, select{
+    border-color: $dark-orange;
+    border-radius: 100em;
+    border-width: 4px;
+    border-style: solid;
+    width: 20vw;
+    padding: 10px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    font-size: 17px;
+    color: $light-grey;
+    margin-right: .3em;
+
+    &::placeholder {
+      color: $light-grey;
+    }
+  }
+
+  input[type="button"] {
+    background-color: $dark-orange;
+    color: $white;
+    width: 13vw;
+    border-radius: 100em;
+    padding: 15px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    height: 100%;
   }
 
   .cellDiv{

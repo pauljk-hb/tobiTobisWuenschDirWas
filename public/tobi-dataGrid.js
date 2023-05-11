@@ -73,7 +73,21 @@ const gridOptions = {
       document.location.reload();
     }
 
-  }
+    if (params.value != 'undifiend') {
+      copyValue = params.value;
+    }
+
+  },  
+
+  //Fehler bei event Handler
+  // onCellDoubleClicked: params =>{
+  //   console.log(params.value)
+  //   if (params.value != 'undifiend') {
+  //     console.log(params.value)
+  //     copyValue = params.value;
+  //     navigator.clipboard.writeText(copyValue);
+  //   }
+  // }
 };
 
 // setup the grid after the page has finished loading
@@ -92,3 +106,30 @@ async function tobiGetData() {
   gridOptions.api.setRowData(jsonData);
   console.log(jsonData);
 }
+
+function onFilterTextBoxChanged() {
+  gridOptions.api.setQuickFilter(
+    document.getElementById('filter-text-box').value
+  );
+}
+
+document.getElementById("dance").addEventListener('change', selectOption, false);
+
+function selectOption() {
+  const selectedOption = this.options[this.selectedIndex].value;
+  console.log(selectedOption);
+  if (selectedOption == 'alle') {
+    gridOptions.api.setQuickFilter('');
+  } else {
+    gridOptions.api.setQuickFilter(selectedOption);
+  }
+}
+
+let copyValue;
+document.getElementById('copy').addEventListener('click', () => {
+  navigator.clipboard.writeText(copyValue);
+  document.getElementById('copy').value = 'Kopiert';
+  setTimeout(() => {
+    document.getElementById('copy').value = 'Kopieren';
+  }, "1000")
+})

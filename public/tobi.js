@@ -47,17 +47,7 @@ async function tobiGetData() {
     let play = document.getElementsByClassName('play');
     for (let i = 0; i < play.length; i++) {
         play[i].addEventListener('click', () => {
-            let _id = jsonData[i]._id;
-            let Data = { _id };
-            const options = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(Data)
-            };
-
-            fetch('/tobi-change', options);
+            
 
             tobiGetData();
         })

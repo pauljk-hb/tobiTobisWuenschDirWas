@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/favicon.png"
+    />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-alpine.css" />
@@ -23,6 +28,25 @@
 
         <img id="Logo" src="images/Logo.webp" alt="">
 
+        <div id="controll-Holder">
+            <input type="text" placeholder="Suche" oninput="onFilterTextBoxChanged()" id="filter-text-box" >
+            <select name="Tänze" id="dance">
+                <option class="blackColor"  value="alle">Alle Tänze</option>
+                <option class="blackColor"  value="lWalzer">L. Walzer</option>
+                <option class="blackColor" value="wWalzer">W. Walzer</option>
+                <option class="blackColor" value="rumba">Rumba</option>
+                <option class="blackColor" value="samba">Samba</option>
+                <option class="blackColor" value="chachacha">ChaChaCha</option>
+                <option class="blackColor" value="discofox">DiscoFox</option>
+                <option class="blackColor" value="quickstep">Quickstep</option>
+                <option class="blackColor" value="tango">Tango</option>
+                <option class="blackColor" value="slowfox">Slowfox</option>
+                <option class="blackColor" value="jive">Jive</option>
+                <option class="blackColor" value="pasodoble">Paso Doble</option>
+                <option class="blackColor" value="salsa">Salsa</option>
+            </select>
+            <input type="button" value="Kopieren" id="copy" onclick="copyCellValue()">
+        </div>
         <div id="Grid" class="ag-theme-alpine" style="height: 70vh; width: 89vw;"></div>
 
     </div>
