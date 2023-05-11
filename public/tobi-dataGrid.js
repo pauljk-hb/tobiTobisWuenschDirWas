@@ -128,8 +128,8 @@ function selectOption() {
 let copyValue;
 document.getElementById('copy').addEventListener('click', () => {
   navigator.clipboard.writeText(copyValue);
-  document.getElementById('copy').value = 'Kopiert';
+  document.getElementById('copy').innerText = 'Kopiert';
   setTimeout(() => {
-    document.getElementById('copy').value = 'Kopieren';
+    document.getElementById('copy').innerText = 'Kopieren';
   }, "1000")
 })

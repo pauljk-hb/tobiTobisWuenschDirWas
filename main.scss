@@ -100,6 +100,7 @@ a {
     margin: 15px 0;
     box-sizing: border-box;
     font-size: 1em;
+    -webkit-appearance: none;
 
     &::placeholder {
       color: $light-grey;
@@ -119,6 +120,8 @@ a {
     background-color: $dark-orange;
     color: $white;
     font-weight: 700;
+    border-radius: 100em;
+    -webkit-appearance: none;
   }
 
   .toggle {
@@ -259,7 +262,7 @@ a {
     }
   }
 
-  input[type="button"] {
+  button[type="button"] {
     background-color: $dark-orange;
     color: $white;
     width: 13vw;
