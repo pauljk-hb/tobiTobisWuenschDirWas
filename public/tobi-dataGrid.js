@@ -100,6 +100,12 @@ function buildGrid() {
   gridOptions.api.sizeColumnsToFit();
 }
 
+setInterval(update, 300000);
+
+function update() {
+  document.location.reload();
+}
+
 async function tobiGetData() {
   const data = await fetch('/tobi-wishes');
   const jsonData = await data.json();
