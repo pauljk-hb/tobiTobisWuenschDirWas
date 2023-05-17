@@ -77,7 +77,7 @@ const gridOptions = {
       copyValue = params.value;
     }
 
-  },  
+  },
 
   //Fehler bei event Handler
   // onCellDoubleClicked: params =>{
@@ -93,10 +93,10 @@ const gridOptions = {
 // setup the grid after the page has finished loading
 document.addEventListener('DOMContentLoaded', buildGrid);
 
-function buildGrid() {
+async function buildGrid() {
   const gridDiv = document.querySelector('#Grid');
-  tobiGetData();
   new agGrid.Grid(gridDiv, gridOptions);
+  await tobiGetData();
   gridOptions.api.sizeColumnsToFit();
 }
 
