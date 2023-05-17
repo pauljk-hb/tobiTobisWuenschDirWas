@@ -3,5 +3,12 @@
   "short_name": "Wünsch dir was",
   "background_color": "#f8af33",
   "theme_color": "#f8af33",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/favicon.png",
+      "type": "image/png"
+    }
+  ]
 }
