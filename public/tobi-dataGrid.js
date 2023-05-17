@@ -132,8 +132,9 @@ function selectOption() {
 }
 
 let copyValue;
-document.getElementById('copy').addEventListener('click', () => {
-  navigator.clipboard.writeText(copyValue);
+document.getElementById('copy').addEventListener('click', async () => {
+  if (!copyValue) return;
+  await navigator.clipboard.writeText(copyValue);
   document.getElementById('copy').innerText = 'Kopiert';
   setTimeout(() => {
     document.getElementById('copy').innerText = 'Kopieren';
