@@ -100,6 +100,12 @@ function buildGrid() {
   gridOptions.api.sizeColumnsToFit();
 }
 
+setInterval(update, 300000);
+
+function update() {
+  document.location.reload();
+}
+
 async function tobiGetData() {
   const data = await fetch('/tobi-wishes');
   const jsonData = await data.json();
@@ -128,8 +134,8 @@ function selectOption() {
 let copyValue;
 document.getElementById('copy').addEventListener('click', () => {
   navigator.clipboard.writeText(copyValue);
-  document.getElementById('copy').value = 'Kopiert';
+  document.getElementById('copy').innerText = 'Kopiert';
   setTimeout(() => {
-    document.getElementById('copy').value = 'Kopieren';
+    document.getElementById('copy').innerText = 'Kopieren';
   }, "1000")
 })

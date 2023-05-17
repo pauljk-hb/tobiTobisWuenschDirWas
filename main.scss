@@ -100,6 +100,7 @@ a {
     margin: 15px 0;
     box-sizing: border-box;
     font-size: 1em;
+    -webkit-appearance: none;
 
     &::placeholder {
       color: $light-grey;
@@ -119,6 +120,8 @@ a {
     background-color: $dark-orange;
     color: $white;
     font-weight: 700;
+    border-radius: 100em;
+    -webkit-appearance: none;
   }
 
   .toggle {
@@ -215,9 +218,9 @@ a {
   overflow: hidden;
 
   #Logo {
-    width: 23vw;
-    margin-top: 1.5em;
-    margin-bottom: 1em;
+    width: 20vw;
+    margin-top: 1em;
+    margin-bottom: .2em;
   }
 
   .back {
@@ -259,7 +262,7 @@ a {
     }
   }
 
-  input[type="button"] {
+  button[type="button"] {
     background-color: $dark-orange;
     color: $white;
     width: 13vw;
