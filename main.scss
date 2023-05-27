@@ -241,7 +241,8 @@ a {
   #controll-Holder{
     align-self: flex-start;
     display: flex;
-    padding-left: 5vw;
+    padding: 0 5vw;
+    flex-wrap: wrap;
   }
 
   input, select{
@@ -250,6 +251,7 @@ a {
     border-width: 4px;
     border-style: solid;
     width: 20vw;
+    min-width: 160px;
     padding: 10px;
     margin: 15px 0;
     box-sizing: border-box;
@@ -266,12 +268,12 @@ a {
     background-color: $dark-orange;
     color: $white;
     width: 13vw;
+    min-width: 160px;
     border-radius: 100em;
     padding: 15px;
     margin: 15px 0;
     box-sizing: border-box;
     font-size: 17px;
-    display: flex;
     justify-content: center;
     align-items: center;
     gap: 1em;
