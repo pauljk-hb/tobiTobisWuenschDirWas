@@ -4,13 +4,12 @@ const sassMiddleware = require('node-sass-middleware')
 
 const app = express();
 app.listen(process.env.PORT || 3000, () => console.log('Turbo Tobi läuft auf Port 3000'))
-app.use(express.static('public'));
+app.use(express.static('public', {extensions: ['html']}));
 app.use(express.json({limit: '1mb'}))
 app.use(sassMiddleware({
     src: __dirname,
     dest: __dirname + '/public',
-    debug: true,
-    outputStyle: 'extended'
+    outputStyle: 'compressed'
 }));
 
 const datbase = new datastore('database.db');
