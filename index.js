@@ -36,6 +36,7 @@ app.post('/api', (req, res) => {
     console.log(data);
 
     if (data.songVal && data.bandVal) {
+        data.created = new Date().toISOString();
         datbase.insert(data);
     }
     res.end;
