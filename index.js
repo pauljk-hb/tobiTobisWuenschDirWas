@@ -1,5 +1,5 @@
 const express = require("express");
-const datastore = require('nedb');
+const Datastore = require('nedb');
 const sassMiddleware = require('node-sass-middleware')
 const Sentry = require('@sentry/node');
 
@@ -27,7 +27,7 @@ app.use(sassMiddleware({
 app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 
-const datbase = new datastore('database.db');
+const datbase = new Datastore({filename: 'database.db', timestampData: true});
 datbase.loadDatabase();
 
 //Routes
@@ -36,7 +36,6 @@ app.post('/api', (req, res) => {
     console.log(data);
 
     if (data.songVal && data.bandVal) {
-        data.created = new Date().toISOString();
         datbase.insert(data);
     }
     res.end;
