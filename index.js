@@ -1,5 +1,5 @@
 const express = require("express");
-const Datastore = require('nedb');
+const Datastore = require('@seald-io/nedb');
 const sassMiddleware = require('node-sass-middleware')
 const Sentry = require('@sentry/node');
 
