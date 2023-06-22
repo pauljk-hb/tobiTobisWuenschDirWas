@@ -103,9 +103,10 @@ a {
     -webkit-appearance: none;
 
     &::placeholder {
-      color: $light-grey;
+      color: $light-orange;
+      font-style: italic;
     }
-    
+
   }
 
   select{
@@ -260,7 +261,8 @@ a {
     margin-right: .3em;
 
     &::placeholder {
-      color: $light-grey;
+      color: $light-orange;
+      font-style: italic;
     }
   }
 

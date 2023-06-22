@@ -101,7 +101,7 @@ function selectOption() {
     const selectedOption = this.options[this.selectedIndex].value;
     console.log(selectedOption);
     if (selectedOption == '') {
-        this.style.color = '#CCCCCC'
+        this.style.color = '#f8af33'
         console.log(this.options[this.selectedIndex])
     } else {
         this.style.color = 'black'
