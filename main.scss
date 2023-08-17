@@ -121,6 +121,8 @@ select {
     )
     no-repeat;
   background-size: contain;
+  background-color: $light-orange !important;
+  background-attachment: fixed !important;
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow-x: hidden;
@@ -129,7 +131,7 @@ select {
   align-items: center;
 
   header {
-    margin-bottom: -35vh;
+    position: fixed;
 
     img:nth-of-type(2) {
       margin-top: -3em;
@@ -144,6 +146,8 @@ select {
 
   form {
     margin: 2em;
+    margin-top: 45vh;
+    z-index: 4;
   }
 
   input[type="submit"] {
@@ -152,11 +156,16 @@ select {
     font-weight: 700;
   }
 
+  h1{
+    z-index: 3;
+  }
+
   .toggle {
     height: 3em;
     display: flex;
     padding: 0 2em;
     margin-bottom: 3em;
+    z-index: 3;
 
     button[type="button"]:nth-child(1) {
       border-radius: 100em 0 0 100em;
@@ -174,6 +183,7 @@ select {
   }
 
   .songs {
+    z-index: 3;
     div {
       display: flex;
       align-items: center;

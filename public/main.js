@@ -107,3 +107,12 @@ function selectOption() {
         this.style.color = 'black'
     }
 }
+
+var headingPos = document.querySelector("h1").offsetTop;
+window.onscroll = function() {
+    if (window.pageYOffset > 0) {
+        var opac = Math.pow(1-(window.pageYOffset / headingPos), 2.5);
+        document.querySelector("#app").style.background = "linear-gradient(110deg, rgba(255, 255, 255,"+opac+") 10em, rgba(214, 85, 39, "+opac+") 10em, rgba(214, 85, 39, "+opac+") 12em, rgba(248, 175, 51, "+opac+") 12em)no-repeat";
+        document.querySelector("header").style.opacity = opac;
+    }
+  }
