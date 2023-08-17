@@ -1,70 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f8af33"/>
-    <link
-      rel="icon"
-      type="image/png"
-      href="images/favicon.png"
-    />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8af33" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <title>Turbo Tobis App</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <link rel="manifest" href="manifest.json" />
-</head>
+    <script type="module" defer src="main.js"></script>
+  </head>
 
-<body>
+  <body>
     <div id="app">
+      <header>
+        <img src="images/Logo.webp" alt="Turbo Tobis Wünsch dir Was" />
+        <img src="images/tobi.webp" alt="Tobi" />
+      </header>
 
-        <header>
-            <img src="images/Logo.webp" alt="Turbo Tobis Wünsch dir Was">
-            <img src="images/tobi.webp" alt="Tobi">
-        </header>
+      <form>
+        <h1>Wunsch Song</h1>
+        <input type="text" placeholder="Name" id="name" autocomplete="name" />
+        <input type="text" required placeholder="Wunsch Song" id="song" />
+        <input type="text" required placeholder="Künstler" id="band" />
+        <select name="Tänze" required id="dance">
+          <option class="greyColor" selected value="">Tanz</option>
+          <option class="blackColor" value="L. Walzer">L. Walzer</option>
+          <option class="blackColor" value="W. Walzer">W. Walzer</option>
+          <option class="blackColor" value="Rumba">Rumba</option>
+          <option class="blackColor" value="Samba">Samba</option>
+          <option class="blackColor" value="ChaChaCha">ChaChaCha</option>
+          <option class="blackColor" value="DiscoFox">DiscoFox</option>
+          <option class="blackColor" value="Quickstep">Quickstep</option>
+          <option class="blackColor" value="Tango">Tango</option>
+          <option class="blackColor" value="Slowfox">Slowfox</option>
+          <option class="blackColor" value="Jive">Jive</option>
+          <option class="blackColor" value="Paso Doble">Paso Doble</option>
+          <option class="blackColor" value="Salsa">Salsa</option>
+        </select>
+        <input type="submit" id="send" />
+      </form>
 
-        <form>
-            <h1>Wunsch Song</h1>
-            <input type="text" placeholder="Name" id="name" autocomplete="name">
-            <input type="text" required placeholder="Wunsch Song" id="song">
-            <input type="text" required placeholder="Künstler" id="band">
-            <select name="Tänze" required id="dance">
-                <option class="greyColor" selected value="">Tanz</option>
-                <option class="blackColor"  value="L. Walzer">L. Walzer</option>
-                <option class="blackColor" value="W. Walzer">W. Walzer</option>
-                <option class="blackColor" value="Rumba">Rumba</option>
-                <option class="blackColor" value="Samba">Samba</option>
-                <option class="blackColor" value="ChaChaCha">ChaChaCha</option>
-                <option class="blackColor" value="DiscoFox">DiscoFox</option>
-                <option class="blackColor" value="Quickstep">Quickstep</option>
-                <option class="blackColor" value="Tango">Tango</option>
-                <option class="blackColor" value="Slowfox">Slowfox</option>
-                <option class="blackColor" value="Jive">Jive</option>
-                <option class="blackColor" value="Paso Doble">Paso Doble</option>
-                <option class="blackColor" value="Salsa">Salsa</option>
-            </select>
-            <input type='submit' id="send">
-        </form>
+      <h1>Alle Wunsch Songs</h1>
 
-        <h1>Alle Wunsch Songs</h1>
-        <div class="toggle">
-            <button type='button' id="bt1">offene <img src="images/music .webp" alt=""></button>
-            <button type='button' id="bt2">gespielte <img src="images/music .webp" alt=""></button>
-        </div>
+      <div class="toggle">
+        <button type="button" id="bt1">
+          offene <img src="images/music .webp" alt="" />
+        </button>
+        
+        <button type="button" id="bt2">
+          gespielte <img src="images/music .webp" alt="" />
+        </button>
+      </div>
 
-        <div id="wishes" class="songs">
+      <div id="wishes" class="songs"></div>
 
-        </div>
+      <div id="play" class="songs"></div>
 
-        <div id="play" class="songs">
-
-        </div>
-
-        <a href="impressum.html" class="impressum">Impressum/Datenschutz</a>
-
+      <a href="impressum.html" class="impressum">Impressum/Datenschutz</a>
     </div>
-    <script type="module" src="main.js"></script>
-</body>
-
+  </body>
 </html>

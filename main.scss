@@ -5,7 +5,7 @@
 $white: #ffffff;
 $dark-orange: #d65527;
 $light-orange: #f8af33;
-$light-grey: #CCCCCC;
+$light-grey: #cccccc;
 $black: black;
 
 * {
@@ -19,7 +19,8 @@ body {
 }
 
 img,
-picture svg {
+picture,
+svg {
   max-width: 100%;
   display: block;
 }
@@ -29,35 +30,96 @@ h2,
 h3 {
   font-family: Roboto;
   text-align: center;
-  margin-bottom: .8em;
-  margin-top: .3em;
+  margin-bottom: 0.8em;
+  margin-top: 0.3em;
   color: $white;
 }
 
 h1 {
-  font-size: clamp(1.9em, 4vw, 3em);
+  font-size: clamp(2.1em, 5vw, 4em);
+  margin-bottom: 0.4em;
   font-weight: 900;
 }
 
-ul li {
+ul,
+li {
   list-style-position: inside;
-  margin-top: .8em;
+  margin-top: 0.8em;
 }
 
 a {
   color: $white;
 }
 
-.blackColor{
-  color: $black;
+button[type="button"] {
+  background-color: $dark-orange;
+  color: $white;
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 100%;
+  border: 4px solid $dark-orange;
 }
-.greyColor{
+
+input,
+input[type="submit"],
+select {
+  border-color: $dark-orange;
+  border-radius: 100em;
+  border-width: 4px;
+  border-style: solid;
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  font-size: 1em;
+  -webkit-appearance: none;
+
+  &::placeholder {
+    color: $light-grey;
+    font-style: italic;
+  }
+}
+
+select {
   color: $light-grey;
 }
 
+//Hilfsklassen
+.blackColor {
+  color: $black;
+}
+.greyColor {
+  color: $light-grey;
+}
+.circle {
+  background-color: $dark-orange;
+  border-radius: 100%;
+  position: fixed;
+  top: 1.5em;
+  right: 3vw;
+  padding: 1em;
+  z-index: 3;
+}
+
+
+
 //Main App
 #app {
-  background: linear-gradient(110deg, #fff 10em, #d65527 10em, #d65527 12em, #f8af33 12em) no-repeat;
+  background: linear-gradient(
+      110deg,
+      $white 10em,
+      $dark-orange 10em,
+      $dark-orange 12em,
+      $light-orange 12em
+    )
+    no-repeat;
   background-size: contain;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -65,11 +127,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  h1 {
-    font-size: clamp(2.1em, 5vw, 4em);
-    margin-bottom: .4em;
-  }
 
   header {
     margin-bottom: -35vh;
@@ -83,34 +140,6 @@ a {
       z-index: 3;
       position: relative;
     }
-
-    img {
-      width: 100%;
-    }
-  }
-
-  input,
-  input[type="submit"], select {
-    border-color: $dark-orange;
-    border-radius: 100em;
-    border-width: 4px;
-    border-style: solid;
-    width: 100%;
-    padding: 15px;
-    margin: 15px 0;
-    box-sizing: border-box;
-    font-size: 1em;
-    -webkit-appearance: none;
-
-    &::placeholder {
-      color: $light-orange;
-      font-style: italic;
-    }
-
-  }
-
-  select{
-    color: $light-grey;
   }
 
   form {
@@ -121,8 +150,6 @@ a {
     background-color: $dark-orange;
     color: $white;
     font-weight: 700;
-    border-radius: 100em;
-    -webkit-appearance: none;
   }
 
   .toggle {
@@ -130,22 +157,6 @@ a {
     display: flex;
     padding: 0 2em;
     margin-bottom: 3em;
-
-    button[type="button"] {
-      background-color: $dark-orange;
-      color: $white;
-      width: 100%;
-      padding: 15px;
-      margin: 15px 0;
-      box-sizing: border-box;
-      font-size: 1em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1em;
-      height: 100%;
-      border: 4px solid $dark-orange;
-    }
 
     button[type="button"]:nth-child(1) {
       border-radius: 100em 0 0 100em;
@@ -162,8 +173,8 @@ a {
     }
   }
 
-  .songs{
-    div{
+  .songs {
+    div {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -171,14 +182,14 @@ a {
       font-size: 1em;
       margin-bottom: 1em;
 
-      img{
+      img {
         height: 1.4em;
         width: auto;
       }
     }
   }
 
-  #play{
+  #play {
     display: none;
   }
 
@@ -186,14 +197,13 @@ a {
     text-align: center;
     margin-bottom: 2em;
   }
-
 }
 
 //Tobi Dashboard
 .ag-theme-alpine {
-  --ag-alpine-active-color: #d65527!important;
-  --ag-background-color: #f8af33!important;
-  --ag-odd-row-background-color: #e0842e!important;
+  --ag-alpine-active-color: #d65527 !important;
+  --ag-background-color: #f8af33 !important;
+  --ag-odd-row-background-color: #e0842e !important;
   --ag-row-hover-color: #ffc46b !important;
   --ag-foreground-color: white !important;
   --ag-header-foreground-color: #d65527 !important;
@@ -205,12 +215,20 @@ a {
   --ag-row-border-color: white !important;
 }
 
-.ag-header-icon{
-  color: #CCCCCC !important;
+.ag-header-icon {
+  color: #cccccc !important;
 }
 
 #tobi-view {
-  background: $light-orange linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
+  background: $light-orange
+    linear-gradient(
+      120deg,
+      $white 2em,
+      $dark-orange 2em,
+      $dark-orange 4em,
+      $light-orange 4em
+    )
+    no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,7 +239,7 @@ a {
   #Logo {
     width: 20vw;
     margin-top: 1em;
-    margin-bottom: .2em;
+    margin-bottom: 0.2em;
   }
 
   .back {
@@ -229,103 +247,50 @@ a {
     height: auto;
   }
 
-  .circle {
-    background-color: $dark-orange;
-    border-radius: 100%;
-    position: fixed;
-    top: 1.5em;
-    right: 3vw;
-    padding: 1em;
-    z-index: 3;
-  }
-
-  #controll-Holder{
+  #controll-Holder {
     align-self: flex-start;
     display: flex;
     padding: 0 5vw;
     flex-wrap: wrap;
   }
 
-  input, select{
-    border-color: $dark-orange;
-    border-radius: 100em;
-    border-width: 4px;
-    border-style: solid;
-    width: 20vw;
-    min-width: 160px;
+  input,
+  select {
+    width: max(20vw, 160px);
     padding: 10px;
-    margin: 15px 0;
-    box-sizing: border-box;
     font-size: 17px;
-    color: $light-grey;
-    margin-right: .3em;
-
-    &::placeholder {
-      color: $light-orange;
-      font-style: italic;
-    }
+    margin-right: 0.3em;
   }
 
   button[type="button"] {
-    background-color: $dark-orange;
-    color: $white;
-    width: 13vw;
-    min-width: 160px;
+    width: max(13vw, 160px);
     border-radius: 100em;
-    padding: 15px;
-    margin: 15px 0;
-    box-sizing: border-box;
     font-size: 17px;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    height: 100%;
   }
 
-  .cellDiv{
+  .cellDiv {
     height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    .play{
+    .play {
       height: 90%;
     }
   }
-
-  // #content {
-  //   width: 80vw;
-  //   margin-bottom: 5em;
-  //   border-top: 1px solid white;
-
-  //   &>div {
-  //     color: $white;
-  //     grid-template-columns: 3fr 3fr 3fr 2fr 1fr 1fr;
-  //     display: grid;
-  //     border-bottom: 1px solid white;
-  //     align-items: center;
-  //     padding: 1em 0;
-  //     gap: .2em;
-
-  //     &>div {
-  //       width: 4vw;
-  //       height: 4vw;
-  //       background-color: $white;
-  //       border-radius: .3rem;
-  //       padding: .5em;
-  //       justify-self: end;
-
-  //       &:active {
-  //         transform: scale(.9);
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 //Impressum
 #impressum {
   padding: 3em 1em 1em;
-  background: $light-orange linear-gradient(120deg, $white 2em, $dark-orange 2em, $dark-orange 4em, $light-orange 4em) no-repeat;
+  background: $light-orange
+    linear-gradient(
+      120deg,
+      $white 2em,
+      $dark-orange 2em,
+      $dark-orange 4em,
+      $light-orange 4em
+    )
+    no-repeat;
   color: $white;
 
   p,
@@ -347,14 +312,5 @@ a {
   .back {
     width: 9vw;
     height: auto;
-  }
-
-  .circle {
-    background-color: $dark-orange;
-    border-radius: 100%;
-    position: fixed;
-    top: 1.5em;
-    right: 3vw;
-    padding: 1em;
   }
 }
