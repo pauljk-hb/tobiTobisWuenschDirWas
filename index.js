@@ -38,6 +38,11 @@ app.post('/api', (req, res) => {
     if (data.songVal && data.bandVal) {
         datbase.insert(data);
     }
+
+    const resData = {
+        status: 'success',
+    };
+    res.json(resData);
     res.end;
 });
 
@@ -47,9 +52,7 @@ app.post('/tobi-change', (req, res) => {
     console.log(id);
 
     datbase.update( { _id: id }, {$set: { playedVal: true }}, (err, numReplec) => {
-        if(err){
-            return
-        }
+        if(err) return;
         numReplec = 1;
     })
     res.end;
