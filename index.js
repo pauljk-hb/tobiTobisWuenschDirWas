@@ -1,14 +1,9 @@
+require("./instrument");
 const express = require("express");
 const Datastore = require('@seald-io/nedb');
 const Sentry = require('@sentry/node');
 
 const app = express();
-
-Sentry.init({
-    dsn: "https://2b22ae9f2bf0428e897e1036c929220d@o407859.ingest.sentry.io/4505295169650688",
-
-    tracesSampleRate: 1.0,
-});
 
 app.listen(process.env.PORT || 3000, () => console.log('Turbo Tobi läuft auf Port 3000'))
 app.use(express.static('public', {extensions: ['html']}));
