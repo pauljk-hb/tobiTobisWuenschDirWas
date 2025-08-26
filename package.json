@@ -5,15 +5,20 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build:sass": "sass main.scss public/main.css",
+    "watch:sass": "sass --watch main.scss public/main.css",
+    "dev": "npm-run-all --parallel start watch:sass",
     "build": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paul, Simon",
   "license": "MIT",
   "dependencies": {
-    "@seald-io/nedb": "^4.0.2",
-    "@sentry/node": "^7.54.0",
-    "express": "^4.18.2",
-    "node-sass-middleware": "^1.0.1"
+    "@seald-io/nedb": "^4.1.2",
+    "@sentry/node": "^10.6.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "sass": "^1.91.0"
   }
 }
